@@ -5,4 +5,5 @@ Slack function proxy built for Google Cloud Functions.
 Deploy `/src` to Google Cloud Functions.
 
 Supply the following environment variables:
-SLACK_SIGNING_SECRET
+
+- SLACK_SIGNING_SECRET
