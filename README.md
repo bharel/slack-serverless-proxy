@@ -9,6 +9,12 @@ Go was chosen after careful examination and comparison with other languages. Acc
 
 After deploying the library, another serverless function can be set to read from the queue, in any chosen programming language, with an unlimited response time.
 
+### Notes
+
+- Does not support directly responding to the slack requests. Automatically returns a 200 on valid requests.
+In order to respond, use the data from the queue and send a message in the appropriate channel. For invalid commands, an example solution would be to send an [ephemeral message](https://api.slack.com/methods/chat.postEphemeral).
+- Does not support OAuth authentication, as `/auth` requires response to the immediate request. OAuth requests do not have a timeout and can implemented using a different serverless function and endpoint.
+
 ## Installation instructions
 See the folder applicable to the serverless provider:
 - [Google Cloud Functions](/GCF)
